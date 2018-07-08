@@ -39,16 +39,13 @@ public class CreditCardContoller {
 			if(CardValidation.isValidCreditCardNumber(creditCard.getNumber())) {
 				if (creditCardService.isCardExist(creditCard)) {
 		            return new ResponseEntity<Void>(HttpStatus.CONFLICT);
-		        } 
-				
+		        } 				
 				creditCard.setExpirationDate(getTodaysExpirationDate());
 		        creditCardService.saveCreditCard(creditCard);		 
 		        HttpHeaders headers = new HttpHeaders();
 		        return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
-			} else {
-				 return new ResponseEntity<Void>(HttpStatus.BAD_REQUEST);
-			}
-	        
+			} 
+				return new ResponseEntity<Void>(HttpStatus.BAD_REQUEST);	        
 	    }
 
 	private String  getTodaysExpirationDate() {

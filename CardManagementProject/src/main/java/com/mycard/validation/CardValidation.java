@@ -27,8 +27,7 @@ public class CardValidation {
 	        return sum;
 	    }
 	 
-	    // Return this number if it is a single digit, otherwise,
-	    // return the sum of the two digits
+	    // Return this number if it is a single digit, otherwise, return the sum of the two digits
 	    public static int getDigit(int number)
 	    {
 	        if (number < 9)
